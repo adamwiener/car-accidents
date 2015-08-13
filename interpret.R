@@ -24,8 +24,6 @@ cas <- head(accidents, 10000)
 points(cas$Longitude, cas$Latitude, col = cas$Number_of_Casualties, pch = 19)
 
 # Create hexbin object and plot
-cas <- accidents[4:5]
 rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
-h <- hexbin(cas, xbins = 60)
-plot(h, colramp=rf)
-hexbinplot(Latitude~Longitude, data=cas, colramp=rf, trans=log, inv=exp)
+hexbinplot(Latitude~Longitude, data=accidents, colramp=rf, trans=log, inv=exp, xbins=75)
+
